@@ -1,53 +1,50 @@
 package com.hex.trs.model;
 
-import java.time.Instant;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import com.hex.trs.enums.Priority;
 import com.hex.trs.enums.Status;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity // create a table
+import java.time.Instant;
+
+@Entity
 @Table(name = "tickets")
 @Getter
 @Setter
-@NoArgsConstructor // default constructor
-public class Ticket {
+@NoArgsConstructor
+public class Ticket { //ticket
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(nullable = false)
-	private String subject;
+    @Column(nullable = false)
+    private String subject;
 
-	@Column(length = 1000)
-	private String issue;
+    @Column(length = 1000)
+    private String issue;
 
-	@Enumerated(EnumType.STRING)
-	private Status status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-	@Enumerated(EnumType.STRING)
-	private Priority priority;
+    @Enumerated(EnumType.STRING)
+    private Priority priority;
 
-	@CreationTimestamp
-	private Instant createdAt;
+    @CreationTimestamp
+    private Instant createdAt;
 
-	@UpdateTimestamp
-	private Instant updatedAt;
+    @UpdateTimestamp
+    private Instant updatedAt;
+
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    private Executive executive;
 
 	public Long getId() {
 		return id;
@@ -105,6 +102,22 @@ public class Ticket {
 		this.updatedAt = updatedAt;
 	}
 
-	
-	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public Executive getExecutive() {
+		return executive;
+	}
+
+	public void setExecutive(Executive executive) {
+		this.executive = executive;
+	}
+    
+    
+    
 }
