@@ -8,11 +8,4 @@ import lombok.Getter;
 @AllArgsConstructor
 public class InvalidIdException extends RuntimeException{
     private String message;
-
-	public InvalidIdException(String message) {
-		super();
-		this.message = message;
-	}
-    
-    
 }
