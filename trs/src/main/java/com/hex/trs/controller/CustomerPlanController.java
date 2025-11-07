@@ -3,6 +3,7 @@ package com.hex.trs.controller;
 import com.hex.trs.service.CustomerPlanService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,4 +28,7 @@ public class CustomerPlanController {
                 .created(URI.create(""))
                 .body("Plan Registered!!");
     }
+    
+    
+    
 }

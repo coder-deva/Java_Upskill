@@ -2,6 +2,7 @@ package com.hex.trs.controller;
 
 import com.hex.trs.service.TicketService;
 import com.hex.trs.dto.TicketReqDto;
+import com.hex.trs.dto.TicketResDto;
 import com.hex.trs.model.Ticket;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -34,5 +35,13 @@ public class TicketController {
     public List<Ticket> getTicketsFilter(@RequestParam(required = false, defaultValue = "") String priority ,
                                  @RequestParam(required = false,defaultValue = "") String status){
         return ticketService.getTicketsFilter(priority,status);
+    }
+    
+    /*
+    AIM: getTicketInfoWithCustomerAndExecutive
+    * */
+    @GetMapping("/info")
+    public List<TicketResDto> getTicketInfo(){
+        return ticketService.getTicketInfo();
     }
 }

@@ -13,6 +13,8 @@ import java.time.Instant;
 @Getter
 @Setter
 @NoArgsConstructor
+
+// many to many relationship
 public class CustomerPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

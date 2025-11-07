@@ -1,9 +1,13 @@
 package com.hex.trs.service;
 
+import com.hex.trs.dto.PlanDto;
 import com.hex.trs.exception.InvalidIdException;
 import com.hex.trs.model.Plan;
 import com.hex.trs.repository.PlanRepository;
 import lombok.AllArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,4 +20,11 @@ public class PlanService {
         return planRepository.findById(planId)
                 .orElseThrow(()->new InvalidIdException("Plan Id Invalid"));
     }
-}
+
+	public List<PlanDto> getAllPlansWithCustomerCount() {
+	
+		return planRepository.getAllPlansWithCustomerCount();
+	}
+
+    
+	}
