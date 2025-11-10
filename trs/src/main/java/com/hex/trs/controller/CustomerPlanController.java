@@ -16,19 +16,12 @@ import java.net.URI;
 @AllArgsConstructor
 public class CustomerPlanController {
 
-    private final CustomerPlanService customerPlanService;
+	private final CustomerPlanService customerPlanService;
 
-    @PostMapping("/add/{customerId}/{planId}")
-    public ResponseEntity<?> addCustomerPlan(
-            @PathVariable long customerId,
-            @PathVariable long planId
-    ){
-        customerPlanService.addCustomerPlan(customerId,planId);
-        return ResponseEntity
-                .created(URI.create(""))
-                .body("Plan Registered!!");
-    }
-    
-    
-    
+	@PostMapping("/add/{customerId}/{planId}")
+	public ResponseEntity<?> addCustomerPlan(@PathVariable long customerId, @PathVariable long planId) {
+		customerPlanService.addCustomerPlan(customerId, planId);
+		return ResponseEntity.created(URI.create("")).body("Plan Registered!!");
+	}
+
 }

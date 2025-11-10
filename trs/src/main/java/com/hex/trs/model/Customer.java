@@ -18,4 +18,8 @@ public class Customer {
 
     private String name;
     private String cty;
+    
+    
+    @OneToOne
+    private User user;
 }

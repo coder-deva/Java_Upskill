@@ -19,6 +19,9 @@ public class Executive {
     private String name;
     @Enumerated(EnumType.STRING)
     private JobTitle jobTitle;
+    
+    @OneToOne
+    private User user;
 
 
 }

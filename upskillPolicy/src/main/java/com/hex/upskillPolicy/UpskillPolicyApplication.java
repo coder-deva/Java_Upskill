@@ -1,16 +1,14 @@
-package com.hex.trs;
+package com.hex.upskillPolicy;
 
 import org.springframework.boot.SpringApplication;
-
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 //@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @SpringBootApplication
-public class TrsApplication {
+public class UpskillPolicyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TrsApplication.class, args);
+		SpringApplication.run(UpskillPolicyApplication.class, args);
 	}
 
 }

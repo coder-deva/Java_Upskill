@@ -1,7 +1,8 @@
-package com.hex.trs.config;
+package com.hex.upskillPolicy.config;
 
-import com.hex.trs.exception.InvalidIdException;
-import com.hex.trs.exception.UsernameAlreadyExist;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -10,9 +11,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.hex.upskillPolicy.exception.InvalidIdException;
+import com.hex.upskillPolicy.exception.UsernameAlreadyExist;
+
+
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
